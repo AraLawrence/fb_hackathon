@@ -1,7 +1,8 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Clowder (noun) 1. A group or cluster of cats
+
+Clowder is a real-time web-based app that facilitates dynamic group-oriented events.  Users can easily avoid getting overwhelmed with text messages from every member of the group as they coordinate locations.  At a rock concert? Out on the town? Clowder makes it easy to share the status of an event and the group’s current location with an intuitive, easy-to-use interface.  Users subscribed to an event will instantly know where in a series of locations the group can be found, without the need for start and end times.  Plans change--spend less time herding cats and more time having fun!
 
 Things you may want to cover:
 
