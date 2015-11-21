@@ -1,4 +1,50 @@
 Rails.application.routes.draw do
+
+  get 'sessions/index'
+
+  get 'sessions/create'
+
+  get 'sessions/new'
+
+  get 'sessions/edit'
+
+  get 'sessions/show'
+
+  get 'sessions/update'
+
+  get 'sessions/destroy'
+
+  get 'event/index'
+
+  get 'event/create'
+
+  get 'event/new'
+
+  get 'event/edit'
+
+  get 'event/show'
+
+  get 'event/update'
+
+  get 'event/destroy'
+
+  get 'user/index'
+
+  get 'user/create'
+
+  get 'user/new'
+
+  get 'user/edit'
+
+  get 'user/show'
+
+  get 'user/update'
+
+  get 'user/destroy'
+
+  resources :user
+  resources :event 
+  resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
