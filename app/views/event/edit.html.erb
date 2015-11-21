@@ -15,14 +15,14 @@
    <div id="<%= segment.id%>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
      <div class="panel-body">
        <%= bootstrap_form_for :segment do |s| %>
+         <%= s.text_field :place, value: segment.place %>
+         <%= s.text_field :interaction, value: segment.interaction %>
+         <%= s.text_field :s_time, value: segment.s_time %>
          <%= s.text_field :addr, value: segment.loc.addr %>
          <%= s.text_field :city, value: segment.loc.city %>
          <%= s.text_field :state, value: segment.loc.state %>
          <%= s.text_field :zip, value: segment.loc.zip %>
-         <%= s.text_field :s_time, value: segment.s_time %>
-         <%= s.text_field :place, value: segment.place %>
-         <%= s.text_field :interaction, value: segment.interaction %>
-         <%= s.primary "Update Event!" %>
+         <%= s.primary "Update Segment!" %>
        <% end %>
      </div>
    </div>
@@ -33,22 +33,21 @@
    <div class="panel-heading" role="tab" id="headingOne">
      <h4 class="panel-title">
        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#new_segment" aria-expanded="true" aria-controls="collapseOne">
-         Add new
+         Add a new segment to this event!
        </a>
      </h4>
    </div>
    <div id="new_segment" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
      <div class="panel-body">
        <%= bootstrap_form_for :segment do |s| %>
-       	 <%= s.text_field :title %>
+         <%= s.text_field :place %>
+         <%= s.text_field :interaction %>
+         <%= s.text_field :s_time %>
          <%= s.text_field :addr %>
          <%= s.text_field :city %>
          <%= s.text_field :state %>
          <%= s.text_field :zip %>
-         <%= s.text_field :s_time %>
-         <%= s.text_field :place %>
-         <%= s.text_field :interaction %>
-         <%= s.primary "Submit!" %>
+         <%= s.primary "Add New Segment!" %>
        <% end %>
      </div>
    </div>

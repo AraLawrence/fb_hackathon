@@ -133,3 +133,7 @@ body {
 #big-it-text {
     font-size: 24px;
 }
+
+.form-group label {
+    color: #777;
+}

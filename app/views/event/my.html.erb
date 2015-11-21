@@ -4,6 +4,7 @@
   <% @events.each do |e| %>
     <div class="well">
       <%= link_to e.title, event_show_path(e.id) %>
+      <small><%= link_to '(edit)', edit_event_path(e.id) %></small>
     </div>
   <% end %>
 </div>
