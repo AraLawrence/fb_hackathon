@@ -12,9 +12,9 @@ Rails.application.routes.draw do
 
   get 'event/edit/:id' => 'event#edit', as: 'edit_event'
 
-  get 'event/show'
+  get 'event/show/:id' => 'event#show', as: 'event_show'
 
-  get 'event/update' => 'event#update'
+  post 'event/edit/:id' => 'event#update', as: 'event_update'
 
   get 'event/destroy'
 

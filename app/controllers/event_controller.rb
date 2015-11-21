@@ -20,19 +20,21 @@ class EventController < ApplicationController
   end
 
   def edit
-    @places = []
     @event = Event.find params[:id]
-    @event.segments.each do |s|
-      @places.push(s.place)
-    end
+    @segments = @event.segments
   end
 
   def show
+    @event = Event.find params[:id]
+    @segments = @event.segments
   end
 
   def update
-    puts segment_params.inspect
-    # segment = Segment.create
+    event = params[:id]
+    loc = Loc.create addr: segment_params[:addr], city: segment_params[:city], state: segment_params[:state], zip: segment_params[:zip]
+    Event.find(event).segments.create s_time: segment_params[:s_time], loc: loc, place: segment_params[:place], type: segment_params[:type]
+    
+    redirect_to edit_event_path
   end
 
   def destroy
@@ -41,7 +43,7 @@ class EventController < ApplicationController
   private
 
   def segment_params
-    params.require(:segment).permit(:s_time, :addr, :city, :state, :zip);
+    params.require(:segment).permit(:s_time, :addr, :city, :state, :zip, :place, :type);
   end
 
   def event_params

@@ -1,2 +1,37 @@
-<h1>Event#show</h1>
-<p>Find me in app/views/event/show.html.erb</p>
+<div class="container">
+        <h1 class="text-center event-title"><%= @event.title %></h1>
+        <h3 class="text-center event-title"><%= @event.descrip %></h3>
+    </div>
+
+    <div class="row event" style="background-color:#330099 ">
+        <div class="col-xs-3 text-center">
+        <h4 class="event-end">
+            <strong>Start!</strong>
+        </h4>
+        </div>
+        <div class="col-xs-9">
+        </div>
+    </div>
+    <% @segments.each do |segment| %>
+    <% puts segment.place %>
+      <div class="row event" style="background-color:#911146 ">
+        <div class="col-xs-3 path">
+            <div class="connector-top"></div>
+            <div class="circle"></div>
+            <div class="connector-bot"></div>
+        </div>
+        <div class="col-xs-9">
+          <h3><%= segment.place %></h3>
+          <h4><%= segment.type %></h4>
+        </div>
+    </div>
+    <% end %>
+    <div class="row event" style="background-color:#330099 ">
+        <div class="col-xs-3 text-center">
+        <h4 class="event-end">
+            <strong>End!</strong>
+        </h4>
+        </div>
+        <div class="col-xs-9">
+        </div>
+    </div>

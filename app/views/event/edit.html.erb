@@ -1,22 +1,46 @@
 <h1><%= @event.title %></h1>
 <h2>Add more destinations?</h2>
 
-<% @places.each do |p| %>
-  <p><%= p %></p>
-<% end %>
-
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+  <% @segments.each do |segment| %>
+  <div class="panel panel-default">
+   <div class="panel-heading" role="tab" id="headingOne">
+     <h4 class="panel-title">
+       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= segment.id %>" aria-expanded="true" aria-controls="collapseOne">
+         <%= segment.place %>
+       </a>
+     </h4>
+   </div>
+   <div id="<%= segment.id%>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+     <div class="panel-body">
+       <%= bootstrap_form_for :segment do |s| %>
+         <%= s.text_field :addr, value: segment.loc.addr %>
+         <%= s.text_field :city, value: segment.loc.city %>
+         <%= s.text_field :state, value: segment.loc.state %>
+         <%= s.text_field :zip, value: segment.loc.zip %>
+         <%= s.text_field :s_time, value: segment.s_time %>
+         <%= s.text_field :place, value: segment.place %>
+         <%= s.text_field :type, value: segment.type %>
+         <%= s.primary "Update Event!" %>
+       <% end %>
+     </div>
+   </div>
+ </div>
+	<% end %>
+
  <div class="panel panel-default">
    <div class="panel-heading" role="tab" id="headingOne">
      <h4 class="panel-title">
-       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#new_segment" aria-expanded="true" aria-controls="collapseOne">
          Add new
        </a>
      </h4>
    </div>
-   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+   <div id="new_segment" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
      <div class="panel-body">
        <%= bootstrap_form_for :segment do |s| %>
+       	 <%= s.text_field :title %>
          <%= s.text_field :addr %>
          <%= s.text_field :city %>
          <%= s.text_field :state %>
@@ -24,6 +48,7 @@
          <%= s.text_field :s_time %>
          <%= s.text_field :place %>
          <%= s.text_field :type %>
+         <%= s.primary "Submit!" %>
        <% end %>
      </div>
    </div>
