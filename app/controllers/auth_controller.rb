@@ -12,7 +12,7 @@ class AuthController < ApplicationController
     end
 
     session[:user_id] = user.id
-    redirect_to root_path
+    redirect_to event_index_path(user.id)
   end
 
   def logout

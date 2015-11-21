@@ -1,2 +1,31 @@
-<h1>Event#edit</h1>
-<p>Find me in app/views/event/edit.html.erb</p>
+<h1><%= @event.title %></h1>
+<h2>Add more destinations?</h2>
+
+<% @places.each do |p| %>
+  <p><%= p %></p>
+<% end %>
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+ <div class="panel panel-default">
+   <div class="panel-heading" role="tab" id="headingOne">
+     <h4 class="panel-title">
+       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+         Add new
+       </a>
+     </h4>
+   </div>
+   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+     <div class="panel-body">
+       <%= bootstrap_form_for :segment do |s| %>
+         <%= s.text_field :addr %>
+         <%= s.text_field :city %>
+         <%= s.text_field :state %>
+         <%= s.text_field :zip %>
+         <%= s.text_field :s_time %>
+         <%= s.text_field :place %>
+         <%= s.text_field :type %>
+       <% end %>
+     </div>
+   </div>
+ </div>
+</div>

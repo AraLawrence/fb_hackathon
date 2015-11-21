@@ -1,3 +1,15 @@
-<h1>Sign in with Facebook</h1>
+<h1>Create an event</h1>
+
+<%= bootstrap_form_for :event do |e| %>
+  <%= e.text_field :title %>
+  <%= e.text_field :descrip %>
+  <%= e.text_field :addr %>
+  <%= e.text_field :city %>
+  <%= e.text_field :state %>
+  <%= e.text_field :zip %>
+  <%= e.text_field :s_time %>
+
+  <%= e.primary "create" %>
+<% end %>
 
 

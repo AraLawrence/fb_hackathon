@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
 
+  post '/' => 'user#create', as: 'user_create'
+
   root 'event#main'
 
-  get 'event/index'
+  get 'event/index/:id' => 'event#index'
 
   get 'event/create'
 
   get 'event/new'
 
-  get 'event/edit'
+  get 'event/edit/:id' => 'event#edit', as: 'edit_event'
 
   get 'event/show'
 
-  get 'event/update'
+  get 'event/update' => 'event#update'
 
   get 'event/destroy'
 
