@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'event#index'
+
   get 'sessions/index'
 
   get 'sessions/create'
