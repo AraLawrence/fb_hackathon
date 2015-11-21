@@ -4,11 +4,15 @@ Rails.application.routes.draw do
 
   root 'event#main'
 
+  get 'event/about' => 'event#about'
+
   get 'event/index/:id' => 'event#index'
 
   get 'event/create'
 
   get 'event/new'
+
+  get 'event/my' => 'event#my', as: 'event_my'
 
   get 'event/edit/:id' => 'event#edit', as: 'edit_event'
 

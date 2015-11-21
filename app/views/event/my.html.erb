@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Hello <%= @user.fname %></h1>
+
+  <% @events.each do |e| %>
+    <div class="well">
+      <%= link_to e.title, event_show_path(e.id) %>
+    </div>
+  <% end %>
+</div>

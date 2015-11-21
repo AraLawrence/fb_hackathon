@@ -81,3 +81,55 @@ h4.event-end {
 .navbar {
    border-radius: 0px;
 }
+
+.parallax {
+    background-image: url(/assets/bar_small1_720.png);
+    background-size: cover;
+    background-color: #330099 ;
+    background-blend-mode: screen;
+    width: 100%;
+    margin-top: -20px;
+}
+
+h2.sans-serif, h3.sans-serif, h4.sans-serif {
+    font-family: helvetica;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 10px #000000 ;
+    padding: 30px;
+    text-transform: none;
+    line-height: 30px;
+}
+
+.features {
+    background-color: #f8f8f8;
+    font-family: helvetica;
+    color:  #330099 ;
+    margin-top: 50px;
+}
+
+.main-text {
+    display: inline-block;
+}
+
+.phone-image {
+    text-align: middle;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.p-image {
+    display: block;
+    margin: 0 auto;
+}
+
+body {
+  background-color: "#f8f8f8"
+}
+
+#fb-btn {
+    margin-left: 25px;
+}
+
+#big-it-text {
+    font-size: 24px;
+}
