@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121122357) do
+ActiveRecord::Schema.define(version: 20151121142321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 20151121122357) do
     t.string   "s_time"
     t.string   "e_time"
     t.integer  "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "place"
-    t.string   "type"
+    t.string   "interaction"
   end
 
   add_index "segments", ["event_id"], name: "index_segments_on_event_id", using: :btree

@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><strong>Clowder</strong> <small>Herding Cats!</small></a>
+            <a class="navbar-brand" href="/"><strong>Clowder</strong> <small>Herding Cats!</small></a>
         </div>
     
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,7 +45,11 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form> -->
             <ul class="nav navbar-nav navbar-right">
+                <% if @current_user %>
                 <li><a href="#">Sign out!</a></li>
+                <% elsif !@current_user %>
+                <li><%= link_to 'Sign in with Facebook!', '/auth/facebook' %></li>
+                <% end %>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Go Places! <b class="caret"></b></a>
                     <ul class="dropdown-menu">

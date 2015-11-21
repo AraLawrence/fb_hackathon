@@ -32,7 +32,7 @@ class EventController < ApplicationController
   def update
     event = params[:id]
     loc = Loc.create addr: segment_params[:addr], city: segment_params[:city], state: segment_params[:state], zip: segment_params[:zip]
-    Event.find(event).segments.create s_time: segment_params[:s_time], loc: loc, place: segment_params[:place], type: segment_params[:type]
+    Event.find(event).segments.create s_time: segment_params[:s_time], loc: loc, place: segment_params[:place], interaction: segment_params[:type]
     
     redirect_to edit_event_path
   end

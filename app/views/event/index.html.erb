@@ -1,15 +1,20 @@
-<h1>Create an event</h1>
+<link rel="stylesheet" href="index.css">
 
-<%= bootstrap_form_for :event do |e| %>
-  <%= e.text_field :title %>
-  <%= e.text_field :descrip %>
-  <%= e.text_field :addr %>
-  <%= e.text_field :city %>
-  <%= e.text_field :state %>
-  <%= e.text_field :zip %>
-  <%= e.text_field :s_time %>
+<div class="container">
+  <h1>Create an event</h1>
 
-  <%= e.primary "create" %>
-<% end %>
+	<%= bootstrap_form_for :event do |e| %>
+	  <%= e.text_field :title, placeholder: "title"%>
+	  <%= e.text_field :descrip, placeholder: "description" %>
+	  <%= e.text_field :addr, placeholder: "address" %>
+	  <%= e.text_field :city, placeholder: "city" %>
+	  <%= e.text_field :state, placeholder: "state" %>
+	  <%= e.text_field :zip, placeholder: "zip" %>
+	  <%= e.text_field :s_time, placeholder: "start time" %>
+
+	  <%= e.primary "create" %>
+	<% end %>
+
+</div>
 
 

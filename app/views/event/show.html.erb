@@ -6,30 +6,43 @@
     <div class="row event" style="background-color:#330099 ">
         <div class="col-xs-3 text-center">
         <h4 class="event-end">
-            <strong>Start!</strong>
+            <strong>Start</strong>
         </h4>
         </div>
         <div class="col-xs-9">
         </div>
     </div>
+    <% seg_num = @segments.length %>
+    <% color = ["#88A825", "#911146", "#CF4A30", "#ED8C2B", "#330099"] %>
+    <% count = 0 %>
     <% @segments.each do |segment| %>
-    <% puts segment.place %>
-      <div class="row event" style="background-color:#911146 ">
+    <% if count == 0 %>
+      <% cur_color = color[0] %>
+    <% else %>
+      <% cur_color == "" %>
+    <% end %>
+    <% if count == seg_num - 1 %>
+      <% c_color = color[count % 5] %>
+    <% else %>
+      <% c_color = "" %>
+    <% end %>
+      <div class="row event" style="background-color:<%= color[count % 5] %>">
         <div class="col-xs-3 path">
-            <div class="connector-top"></div>
+            <div class="connector-top" style="background-color: <%= cur_color %>"></div>
             <div class="circle"></div>
-            <div class="connector-bot"></div>
+            <div class="connector-bot" style="background-color: <%= c_color %>"></div>
         </div>
         <div class="col-xs-9">
           <h3><%= segment.place %></h3>
-          <h4><%= segment.type %></h4>
+          <h4><%= segment.interaction %></h4>
         </div>
     </div>
+    <% count += 1 %>
     <% end %>
     <div class="row event" style="background-color:#330099 ">
         <div class="col-xs-3 text-center">
         <h4 class="event-end">
-            <strong>End!</strong>
+            <strong>End</strong>
         </h4>
         </div>
         <div class="col-xs-9">
