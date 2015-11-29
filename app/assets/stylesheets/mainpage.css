@@ -1,3 +1,8 @@
 body {
-  background-color: "#f8f8f8"
+    background: url(/assets/bar) no-repeat center center fixed;
+    background-size: cover;
+    background-color: #330099 ;
+    background-blend-mode: screen;
+    width: 100%;
+    margin-top: -20px;
 }
